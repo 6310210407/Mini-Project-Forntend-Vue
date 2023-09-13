@@ -12,7 +12,7 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+          Welcome to {{ username}}
         </h1>
 
         <p class="subheading font-weight-regular">
@@ -111,41 +111,23 @@ export default {
       }
     ],
     importantLinks: [
-      {
-        text: 'Documentation',
-        href: 'https://vuetifyjs.com'
-      },
-      {
-        text: 'Chat',
-        href: 'https://community.vuetifyjs.com'
-      },
-      {
-        text: 'Made with Vuetify',
-        href: 'https://madewithvuejs.com/vuetify'
-      },
-      {
-        text: 'Twitter',
-        href: 'https://twitter.com/vuetifyjs'
-      },
-      {
-        text: 'Articles',
-        href: 'https://medium.com/vuetify'
-      }
     ],
     whatsNext: [
-      {
-        text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer'
-      },
-      {
-        text: 'Select a layout',
-        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
-      },
-      {
-        text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
+    ],
+    username: ''
+  }),
+  created () {
+    this.$EventBus.$on('getUsername', this.getUsername)
+    this.getUsername()
+  },
+  methods: {
+    getUsername () {
+      if (localStorage.getItem('username') !== null) {
+        this.username = localStorage.getItem('username')
+      } else {
+        this.username = 'Vuetify'
       }
-    ]
-  })
+    }
+  }
 }
 </script>
