@@ -3,7 +3,7 @@
     <v-row>
         <v-col cols="12">
           <Table/>
-  
+
         </v-col>
      </v-row>
    </v-container>
