@@ -33,6 +33,12 @@
       >
         หน้าจัดการข้อมูล
       </v-btn>
+        <v-btn
+        text
+        @click ="goToProduct()"
+      >
+        Table Product
+      </v-btn>
       <v-btn
         text
         @click ="goToLogin()"
@@ -48,19 +54,22 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
   data: () => ({
   }),
-  methods : {
-    goToLogin () {
-      this.$router.push({ path: '/login'}).catch(() =>{})
+
+  methods: {
+    goToLogin() {
+      this.$router.push({ path: '/login' }).catch(() => {})
     },
-    goToManage () {
-      this.$router.push({ path: '/manageTable'}).catch(() =>{})
-    }
-  }
+    goToManage() {
+      this.$router.push({ path: '/manageTable' }).catch(() => {})
+    },
+    goToProduct() {
+      this.$router.push({ path: '/productTable' }).catch(() => {})
+    },
+  },
 }
 </script>

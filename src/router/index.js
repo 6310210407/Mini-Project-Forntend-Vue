@@ -29,7 +29,13 @@ const routes = [
     name: 'manageTable',
     component: () => import('../views/TableView.vue')
 
- }
+ },
+ {
+    path: '/productTable',
+    name: 'productTable',
+    component: () => import('../views/ConnectBackendView.vue')
+
+}
 ]
 
 const router = new VueRouter({
